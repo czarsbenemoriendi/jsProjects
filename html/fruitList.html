@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="icon" href="../img/apple-brands.svg" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/200e3edf8e.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="../css/fruitList.css" />
+		<title>fruit List</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="card">
+				<div class="card__top">
+					<div class="card__top--shadow"></div>
+					.
+					<h1 class="card__title">Fruit description</h1>
+					<input
+						type="text"
+						class="card__input input"
+						placeholder="Enter the name of the fruit"
+					/>
+					<button class="card__button">Search</button>
+				</div>
+				<div class="card__bottom">
+					<div class="card__container">
+						<p class="card__text">Information about:</p>
+						<p class="card__text card__text--warning hidden"></p>
+						<p class="card__text card__text--fruitName headingFruitName">
+							
+						</p>
+					</div>
+					<!-- incorrect name of fruit -->
+					<div class="card__descriptionBlock hidden">
+						<ll class="card__list">
+							<ul class="card__ul">
+								Genus:
+								<span class="genus"></span>
+							</ul>
+							<ul class="card__ul">
+								Name:
+								<span class="fruitName"></span>
+							</ul>
+							<ul class="card__ul">
+								Family:
+								<span class="family"></span>
+							</ul>
+							<ul class="card__ul">
+								Order:
+								<span class="order"></span>
+							</ul>
+						</ll>
+
+						<li class="card__list">
+							<p class="card__text--nutritions">Nutritions:</p>
+							<ul class="card__ul">
+								Carbohydrates:
+								<span class="carbohydrates"></span>
+							</ul>
+							<ul class="card__ul">
+								Protein:
+								<span class="protein"></span>
+							</ul>
+							<ul class="card__ul">
+								Fat:
+								<span class="fat"></span>
+							</ul>
+							<ul class="card__ul">
+								Calories:
+								<span class="calories"></span>
+							</ul>
+							<ul class="card__ul">
+								Sugar:
+								<span class="sugar"></span>
+							</ul>
+						</li>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/fruitList.js" defer></script>
+	</body>
+</html>
