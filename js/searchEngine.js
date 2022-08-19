@@ -1,15 +1,14 @@
-const allUlItems = document.querySelectorAll('.ul');
+const allLiItems = document.querySelectorAll('.li');
 const input = document.querySelector('.card__input');
-let word, ulItem;
 
-const regExp = /([A-Z])/gi;
-const inputValue = () => {
-	word = input.value;
-	allUlItems.forEach((element) => {
-		ulItem = element.innerHTML;
-		if (word.indexOf(regExp) === -1) {
-			console.log(word);
+const filter = () => {
+	allLiItems.forEach((el) => {
+		const match = new RegExp(input.value, 'i').test(el.textContent);
+		if (match) {
+			el.classList.remove('hide');
+		} else {
+			el.classList.add('hide');
 		}
 	});
 };
-input.addEventListener('keyup', inputValue);
+input.addEventListener('keyup', filter);

@@ -104,10 +104,10 @@ body {
   padding: 20px;
   font-family: "Roboto";
 }
-.card__li {
+.card__ul {
   list-style: none;
 }
-.card__ul {
+.card__li {
   padding-top: 5px;
   border-bottom: 1px solid hsla(0deg, 0%, 0%, 0.453);
 }/*# sourceMappingURL=searchEngine.css.map */
