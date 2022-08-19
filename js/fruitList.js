@@ -27,32 +27,37 @@ const {
 } = fruitDescr;
 
 const btn = document.querySelector('button');
-const URL = 'https://www.fruityvice.com/api/fruit/all';
+const URL =
+	'https://cors-anywhere.herokuapp.com/https://www.fruityvice.com/api/fruit/all';
 
 let data, res;
 let fruitNameFromInput;
 let firstLetter, firstLetterCap, remainingLetters, capitalizedWord;
 
+alert(
+	`Before you use these application you have to temporarily unlock acces to this https://cors-anywhere.herokuapp.com/`
+);
+
 async function getFruityvice() {
 	try {
 		fruitNameFromInput = input.value;
+		firstLetter = fruitNameFromInput.charAt(0);
+		firstLetterCap = firstLetter.toUpperCase();
+		remainingLetters = fruitNameFromInput.slice(1);
+		capitalizedWord = firstLetterCap + remainingLetters;
+
 		res = await fetch(URL, {
 			method: 'GET',
 		});
 		data = await res.json();
 
-		firstLetter = fruitNameFromInput.charAt(0);
-		firstLetterCap = firstLetter.toUpperCase();
-		remainingLetters = fruitNameFromInput.slice(1);
-		capitalizedWord = firstLetterCap + remainingLetters;
-		
 		getDataFromArray();
 	} catch {
 		console.error('error');
 	}
 }
 
-function getDataFromArray() {
+async function getDataFromArray() {
 	data.forEach((element) => {
 		arr = Object.values(element);
 

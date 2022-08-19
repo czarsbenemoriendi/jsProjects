@@ -1,3 +1,4 @@
+FruitList
 18.08
 - Podczas tworzenia tego projektu spotkałem się z potrzebą rozwiązania problemu CORS error
 - Udało mi się 'załatać' ten problem poprzez rozszerzenie do przeglądarki CORS extension. Natomiast wiem, że nie rozwiązuje to problemu z deployem projektu. 
@@ -12,4 +13,6 @@
  
   family: document.querySelector('family'),
 
-- Obecnie mam problem, podczas wywoływania loopa forEach i iteracji tablicy, do momentu znalezienia, pętla zwraca false, który w if'ie zwraca else
+- Obecnie mam problem, podczas wywoływania loopa forEach i iteracji tablicy, do momentu znalezienia, pętla zwraca false, który wykonuje z ifa else 
+
+  ^ problem rozwiązałem, natomiast niekoniecznie tak jak tego chciałem, ale działa!
