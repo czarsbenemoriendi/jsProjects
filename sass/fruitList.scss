@@ -110,5 +110,11 @@ body {
 	}
 	&__list {
 		list-style: none;
+		margin: 0 auto;
+		text-align: center;
 	}
+	&__ul {
+		display: block;
+	}
+	
 }

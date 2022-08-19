@@ -139,4 +139,9 @@ body {
 }
 .card__list {
   list-style: none;
+  margin: 0 auto;
+  text-align: center;
+}
+.card__ul {
+  display: block;
 }/*# sourceMappingURL=fruitList.css.map */

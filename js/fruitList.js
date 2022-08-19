@@ -27,20 +27,25 @@ const {
 } = fruitDescr;
 
 const btn = document.querySelector('button');
-const URL =
-	'https://cors-anywhere.herokuapp.com/https://www.fruityvice.com/api/fruit/all';
+const URL = 'https://www.fruityvice.com/api/fruit/all';
 
 let data, res;
 let fruitNameFromInput;
+let firstLetter, firstLetterCap, remainingLetters, capitalizedWord;
 
 async function getFruityvice() {
 	try {
 		fruitNameFromInput = input.value;
 		res = await fetch(URL, {
 			method: 'GET',
-			'Retry-After': 120,
 		});
 		data = await res.json();
+
+		firstLetter = fruitNameFromInput.charAt(0);
+		firstLetterCap = firstLetter.toUpperCase();
+		remainingLetters = fruitNameFromInput.slice(1);
+		capitalizedWord = firstLetterCap + remainingLetters;
+		
 		getDataFromArray();
 	} catch {
 		console.error('error');
@@ -49,9 +54,12 @@ async function getFruityvice() {
 
 function getDataFromArray() {
 	data.forEach((element) => {
-		const arr = Object.values(element);
-		console.log(arr, element);
-		if (arr.find((element) => arr.name === fruitNameFromInput)) {
+		arr = Object.values(element);
+
+		// I dont know how to stop my loop when it return
+		if (arr.find((element) => element === capitalizedWord)) {
+			warning.textContent = '';
+
 			const dataArr = {
 				dataGenus: element.genus,
 				dataName: element.name,
@@ -75,7 +83,6 @@ function getDataFromArray() {
 				dataSugar,
 			} = dataArr;
 
-			nameOfTheFruit.textContent = dataName;
 			fruitName.textContent = dataName;
 			family.textContent = dataFamily;
 			genus.textContent = dataGenus;
@@ -85,12 +92,17 @@ function getDataFromArray() {
 			fat.textContent = dataFat;
 			calories.textContent = dataCalories;
 			sugar.textContent = dataSugar;
-			// warning.classList.add('hide');
-			// warning.textContent = '';
-		} else {
-			console.log('error');
-			warning.classList.remove('hide');
-			warning.textContent = 'wrong name entered';
+		} else if (capitalizedWord === '') {
+			warning.textContent = 'Wrong fruit name';
+			fruitName.textContent = '';
+			family.textContent = '';
+			genus.textContent = '';
+			order.textContent = '';
+			carbohydrates.textContent = '';
+			protein.textContent = '';
+			fat.textContent = '';
+			calories.textContent = '';
+			sugar.textContent = '';
 		}
 	});
 }
