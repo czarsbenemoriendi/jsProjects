@@ -13,6 +13,3 @@ FruitList
  
   family: document.querySelector('family'),
 
-- Obecnie mam problem, podczas wywoływania loopa forEach i iteracji tablicy, do momentu znalezienia, pętla zwraca false, który wykonuje z ifa else 
-
-  ^ problem rozwiązałem, natomiast niekoniecznie tak jak tego chciałem, ale działa!
