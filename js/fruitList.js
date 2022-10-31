@@ -57,7 +57,7 @@ async function getFruityvice() {
 	}
 }
 
-async function getDataFromArray() {
+const getDataFromArray = function() {
 	data.forEach((element) => {
 		arr = Object.values(element);
 
