@@ -1,3 +1,5 @@
+https://bespoke-custard-4307cb.netlify.app
+
 FruitList
 18.08
 - Podczas tworzenia tego projektu spotkałem się z potrzebą rozwiązania problemu CORS error
